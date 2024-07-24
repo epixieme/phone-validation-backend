@@ -1,11 +1,18 @@
+from phone_number_validator_toolkit.validator import PhoneNumberValidator
+
 from flask import Flask, request, render_template, jsonify
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
+# Import the environ module from the os package
 
 # Import from your PyPI package
-from phone_number_validator_toolkit.validator import PhoneNumberValidator
 
 app = Flask(__name__)
 # Replace with your actual API key
-api_key = "num_live_9vBLFyhoA5fxSmBpfob2Fgi5zYCPtZZ8L0ZHLwPL"
+api_key = os.getenv('PHONE_NUMBER_VALIDATOR_API_KEY')
 validator = PhoneNumberValidator(api_key)
 
 
