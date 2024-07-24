@@ -4,17 +4,16 @@
 
 # Installation
 1. Clone the Repository:
-git clone https://github.com/example/myproject.git
-
-cd myproject
+- git clone https://github.com/example/myproject.git
+- cd myproject
 
 2. Install Dependencies:
-poetry install
+- poetry install
 
 3. Add as a Dependency to Another Project:
 If you want to add myproject as a dependency to another Poetry-managed project:
-cd ../otherproject
-poetry add ../myproject
+- cd ../otherproject
+- poetry add ../myproject
 
 
 4. To run the Project:
