@@ -1,9 +1,8 @@
 # About
 
-Python Flask backend with HTML Template bootstrapped with Matcha.css.
+- Python Flask backend with HTML Template bootstrapped with Matcha.css. Utilising a phone validation package that I built and published with Poetry.
 
-Utilising a phone validation package that I built and published with Poetry.
-
+# Installation
 Clone the Repository:
 git clone https://github.com/example/myproject.git
 cd myproject
