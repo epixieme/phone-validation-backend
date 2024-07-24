@@ -5,6 +5,7 @@
 # Installation
 1. Clone the Repository:
 git clone https://github.com/example/myproject.git
+
 cd myproject
 
 2. Install Dependencies:
