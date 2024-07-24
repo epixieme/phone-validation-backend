@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <title>Phone Number Validator</title>
+    <script>
+        async function validatePhoneNumber() {
+            const phoneNumber = document.getElementById('phone_number').value;
+            const countryCode = document.getElementById('country_code').value;
+            
+            const response = await fetch('/validate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({ phone_number: phoneNumber, country_code: countryCode })
+            });
+
+            const result = await response.json();
+            
+            const resultDiv = document.getElementById('result');
+            if (response.ok) {
+                resultDiv.textContent = `Phone number is ${result.valid ? 'valid' : 'invalid'}.`;
+                resultDiv.style.color = result.valid ? 'green' : 'red';
+            } else {
+                resultDiv.textContent = `Error: ${result.error? 'Invalid phone number or country code.' : 'Internal server error.'}`;
+                resultDiv.style.color = 'red';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Phone Number Validator</h1>
+    <form onsubmit="event.preventDefault(); validatePhoneNumber();">
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" required>
+        <br>
+        <label for="country_code">Country Code (Optional):</label>
+        <input type="text" id="country_code" name="country_code">
+        <br>
+        <button type="submit">Validate</button>
+    </form>
+    <div id="result"></div>
+</body>
+</html>

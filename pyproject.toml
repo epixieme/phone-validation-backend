@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "phone-validation-backend"
+version = "0.1.0"
+description = ""
+authors = ["Kirstie <39728053+epixieme@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.32.3"
+flask = "^3.0.3"
+phone-number-validator-toolkit = "^0.1.0"
+gunicorn = "^22.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
